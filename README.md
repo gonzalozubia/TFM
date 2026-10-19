@@ -1,6 +1,7 @@
 # Pipeline de monitorización automática del avance de obra en plantas fotovoltaicas
 
 Trabajo Fin de Máster · Máster en Big Data & Data Engineering (UCM)
+
 Autor: Gonzalo Zubía López · Tutores: Jorge Centeno y Alberto González
 
 ## Descripción
