@@ -1,0 +1,31 @@
+# Integración continua: en cada subida a GitHub paso los tests y construyo el paquete
+name: tests
+
+on: push
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python 3.11 (la misma versión que uso en local)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar las librerías
+        run: pip install pytest numpy requests build
+
+      - name: Ejecutar los tests
+        run: python -m pytest -v
+
+      - name: Construir el paquete .whl
+        run: python -m build --wheel
+
+      - name: Guardar el .whl para poder descargarlo
+        uses: actions/upload-artifact@v4
+        with:
+          name: avance_obra-whl
+          path: dist/*.whl
