@@ -1,0 +1,473 @@
+createOrReplace
+
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: en-US
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table gold_avance_anual
+			lineageTag: b6bc3a92-1888-4813-8e10-3ced2fc9f7e0
+			sourceLineageTag: [dbo].[gold_avance_anual]
+
+			column planta
+				dataType: string
+				lineageTag: 689435be-ee50-4877-bc21-e4fbcc028b5e
+				sourceLineageTag: planta
+				summarizeBy: none
+				sourceColumn: planta
+
+				annotation SummarizationSetBy = Automatic
+
+			column anio
+				dataType: int64
+				formatString: 0
+				lineageTag: 6fa6fa23-9958-4f47-a164-23d07a0a4dc4
+				sourceLineageTag: anio
+				summarizeBy: none
+				sourceColumn: anio
+
+				changedProperty = SummarizeBy
+
+				annotation SummarizationSetBy = User
+
+			column teselas_planta
+				dataType: int64
+				formatString: 0
+				lineageTag: fd0a181f-9eab-4470-a7a9-7b4b85cac114
+				sourceLineageTag: teselas_planta
+				summarizeBy: sum
+				sourceColumn: teselas_planta
+
+				annotation SummarizationSetBy = Automatic
+
+			column teselas_sin_tocar
+				dataType: int64
+				formatString: 0
+				lineageTag: a911a6c7-575f-4175-b50f-9bcc795dec0a
+				sourceLineageTag: teselas_sin_tocar
+				summarizeBy: sum
+				sourceColumn: teselas_sin_tocar
+
+				annotation SummarizationSetBy = Automatic
+
+			column teselas_mov_tierras
+				dataType: int64
+				formatString: 0
+				lineageTag: ae0fe30d-f37e-4db1-b112-2a73bddb1b0e
+				sourceLineageTag: teselas_mov_tierras
+				summarizeBy: sum
+				sourceColumn: teselas_mov_tierras
+
+				annotation SummarizationSetBy = Automatic
+
+			column teselas_estructuras
+				dataType: int64
+				formatString: 0
+				lineageTag: 49031ee6-a42c-4278-a27d-fd6e5e552921
+				sourceLineageTag: teselas_estructuras
+				summarizeBy: sum
+				sourceColumn: teselas_estructuras
+
+				annotation SummarizationSetBy = Automatic
+
+			column teselas_paneles
+				dataType: int64
+				formatString: 0
+				lineageTag: dec57dc9-5516-4ee7-9f85-a4b6b9a89b81
+				sourceLineageTag: teselas_paneles
+				summarizeBy: sum
+				sourceColumn: teselas_paneles
+
+				annotation SummarizationSetBy = Automatic
+
+			column hectareas_paneles
+				dataType: double
+				lineageTag: 3d0ab483-b369-4dd9-bba4-25c93290d7dc
+				sourceLineageTag: hectareas_paneles
+				summarizeBy: sum
+				sourceColumn: hectareas_paneles
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column pct_avance
+				dataType: double
+				lineageTag: a5617b12-62ec-44ef-8cf9-cae5155d7726
+				sourceLineageTag: pct_avance
+				summarizeBy: sum
+				sourceColumn: pct_avance
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_avance_anual = entity
+				mode: directLake
+				source
+					entityName: gold_avance_anual
+					expressionSource: 'DirectLake - Lh_Gold'
+
+		table validacion_gemini
+			lineageTag: ef532b85-93c1-4aaa-9e8f-2ab30f2810a8
+			sourceLineageTag: [dbo].[validacion_gemini]
+
+			column error_api
+				dataType: string
+				lineageTag: 5ea04731-bebc-4df8-bc72-6b7030ccf260
+				sourceLineageTag: error_api
+				summarizeBy: none
+				sourceColumn: error_api
+
+				annotation SummarizationSetBy = Automatic
+
+			column fase_gemini
+				dataType: string
+				lineageTag: 1edd936d-d57e-45c6-8e9e-5fc10666ef3e
+				sourceLineageTag: fase_gemini
+				summarizeBy: none
+				sourceColumn: fase_gemini
+
+				annotation SummarizationSetBy = Automatic
+
+			column imagen
+				dataType: string
+				lineageTag: 13652de4-17aa-4ab2-b570-f1c01606c5ce
+				sourceLineageTag: imagen
+				summarizeBy: none
+				sourceColumn: imagen
+
+				annotation SummarizationSetBy = Automatic
+
+			column pct_gemini
+				dataType: double
+				lineageTag: 7cd0d411-f70c-4b30-8c84-9dda98f0e1a0
+				sourceLineageTag: pct_gemini
+				summarizeBy: sum
+				sourceColumn: pct_gemini
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column pct_real
+				dataType: double
+				lineageTag: 6ed44e85-45e3-49ec-8a99-500556baca04
+				sourceLineageTag: pct_real
+				summarizeBy: sum
+				sourceColumn: pct_real
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column tipo_terreno
+				dataType: string
+				lineageTag: 391c605f-0f2e-4bb5-b969-4826c209a737
+				sourceLineageTag: tipo_terreno
+				summarizeBy: none
+				sourceColumn: tipo_terreno
+
+				annotation SummarizationSetBy = Automatic
+
+			column error_abs
+				dataType: double
+				lineageTag: 368c5603-d97e-43fe-aa81-ae0b66c6f5e6
+				sourceLineageTag: error_abs
+				summarizeBy: sum
+				sourceColumn: error_abs
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column modelo
+				dataType: string
+				lineageTag: abb6f3fd-a481-4f07-8cef-b754a4b1f8d3
+				sourceLineageTag: modelo
+				summarizeBy: none
+				sourceColumn: modelo
+
+				annotation SummarizationSetBy = Automatic
+
+			column fecha_validacion
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: 0641176a-1f6f-4f7f-bf13-142c6166a9e8
+				sourceLineageTag: fecha_validacion
+				summarizeBy: none
+				sourceColumn: fecha_validacion
+
+				annotation SummarizationSetBy = Automatic
+
+			column version_prompt
+				dataType: string
+				lineageTag: 00d3b7e9-1a3e-45c6-aef5-6d5eb4d5d74a
+				sourceLineageTag: version_prompt
+				summarizeBy: none
+				sourceColumn: version_prompt
+
+				annotation SummarizationSetBy = Automatic
+
+			partition validacion_gemini = entity
+				mode: directLake
+				source
+					entityName: validacion_gemini
+					expressionSource: 'DirectLake - Lh_Gold'
+
+		table gold_teselas
+			lineageTag: 5e77aa27-65b9-4318-8157-404d6d3551dc
+			sourceLineageTag: [dbo].[gold_teselas]
+
+			column planta
+				dataType: string
+				lineageTag: 0281760f-da2c-44cb-a2e6-98bcfe091b45
+				sourceLineageTag: planta
+				summarizeBy: none
+				sourceColumn: planta
+
+				annotation SummarizationSetBy = Automatic
+
+			column anio
+				dataType: int64
+				formatString: 0
+				lineageTag: 0cb51546-26b2-4fee-aa4e-e84b00ddae70
+				sourceLineageTag: anio
+				summarizeBy: sum
+				sourceColumn: anio
+
+				annotation SummarizationSetBy = Automatic
+
+			column tesela
+				dataType: string
+				lineageTag: 7fbba2df-e9c6-4b42-bb94-f4b772e1dbe5
+				sourceLineageTag: tesela
+				summarizeBy: none
+				sourceColumn: tesela
+
+				annotation SummarizationSetBy = Automatic
+
+			column fila
+				dataType: int64
+				formatString: 0
+				lineageTag: dba1cbcd-687a-41a4-8ad2-cdb145ea4b1f
+				sourceLineageTag: fila
+				summarizeBy: sum
+				sourceColumn: fila
+
+				annotation SummarizationSetBy = Automatic
+
+			column columna
+				dataType: int64
+				formatString: 0
+				lineageTag: 4ca1f274-82e5-4b5b-a77b-ae87cda277a7
+				sourceLineageTag: columna
+				summarizeBy: sum
+				sourceColumn: columna
+
+				annotation SummarizationSetBy = Automatic
+
+			column fase
+				dataType: string
+				lineageTag: 970b31b6-801c-4365-be42-94d6253dc0e9
+				sourceLineageTag: fase
+				summarizeBy: none
+				sourceColumn: fase
+
+				annotation SummarizationSetBy = Automatic
+
+			column fase_texto
+				dataType: string
+				lineageTag: 09972bd6-aa6e-4d20-8dca-d6c3b863d6db
+				sourceLineageTag: fase_texto
+				summarizeBy: none
+				sourceColumn: fase_texto
+
+				annotation SummarizationSetBy = Automatic
+
+			column pct_paneles
+				dataType: double
+				lineageTag: ace725a3-8830-4225-8e98-1a557fd58ccd
+				sourceLineageTag: pct_paneles
+				summarizeBy: sum
+				sourceColumn: pct_paneles
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column superficie_paneles_m2
+				dataType: double
+				lineageTag: 75350bd3-63c1-4737-88f6-95a3b42f6e17
+				sourceLineageTag: superficie_paneles_m2
+				summarizeBy: sum
+				sourceColumn: superficie_paneles_m2
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column lat_centro
+				dataType: double
+				lineageTag: c409ce83-1580-4c54-aedb-679439275ed4
+				sourceLineageTag: lat_centro
+				summarizeBy: sum
+				sourceColumn: lat_centro
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column lon_centro
+				dataType: double
+				lineageTag: 89ae513c-7391-4f91-a9e3-d6da2a0b167e
+				sourceLineageTag: lon_centro
+				summarizeBy: sum
+				sourceColumn: lon_centro
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_teselas = entity
+				mode: directLake
+				source
+					entityName: gold_teselas
+					expressionSource: 'DirectLake - Lh_Gold'
+
+		table gold_avance_paneles
+			lineageTag: 0b45801c-d60e-4de7-a645-07a6225efb09
+			sourceLineageTag: [dbo].[gold_avance_paneles]
+
+			column planta
+				dataType: string
+				lineageTag: cdc1900b-cdd9-4106-a24e-8cae2e8be491
+				sourceLineageTag: planta
+				summarizeBy: none
+				sourceColumn: planta
+
+				annotation SummarizationSetBy = Automatic
+
+			column anio
+				dataType: int64
+				formatString: 0
+				lineageTag: e620ebd0-c030-4bfd-82a1-3b445f94431f
+				sourceLineageTag: anio
+				summarizeBy: none
+				sourceColumn: anio
+
+				changedProperty = SummarizeBy
+
+				annotation SummarizationSetBy = User
+
+			column pct_avance
+				dataType: double
+				lineageTag: 2428ff0a-a5e6-466e-9faf-ba63caa0de64
+				sourceLineageTag: pct_avance
+				summarizeBy: sum
+				sourceColumn: pct_avance
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column paneles_totales
+				dataType: int64
+				formatString: 0
+				lineageTag: e086d168-cb9c-4e13-a8f9-7282b1b9afbe
+				sourceLineageTag: paneles_totales
+				summarizeBy: sum
+				sourceColumn: paneles_totales
+
+				annotation SummarizationSetBy = Automatic
+
+			column paneles_instalados_est
+				dataType: int64
+				formatString: 0
+				lineageTag: 3cec148f-da97-4f0e-b8c4-5e5b0a496a5c
+				sourceLineageTag: paneles_instalados_est
+				summarizeBy: sum
+				sourceColumn: paneles_instalados_est
+
+				annotation SummarizationSetBy = Automatic
+
+			column paneles_pendientes_est
+				dataType: int64
+				formatString: 0
+				lineageTag: 310952f0-cc32-46db-8324-f343c22169e0
+				sourceLineageTag: paneles_pendientes_est
+				summarizeBy: sum
+				sourceColumn: paneles_pendientes_est
+
+				annotation SummarizationSetBy = Automatic
+
+			column potencia_total_mwp
+				dataType: double
+				lineageTag: cc747544-30da-40e5-a78b-34f2ec54bc5b
+				sourceLineageTag: potencia_total_mwp
+				summarizeBy: sum
+				sourceColumn: potencia_total_mwp
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column potencia_instalada_mwp_est
+				dataType: double
+				lineageTag: 751cbcf1-310b-4752-99bb-3bccc5201008
+				sourceLineageTag: potencia_instalada_mwp_est
+				summarizeBy: sum
+				sourceColumn: potencia_instalada_mwp_est
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column ha_en_obra
+				dataType: double
+				lineageTag: 44f796df-105d-4294-9dc4-da0822fb69cf
+				sourceLineageTag: ha_en_obra
+				summarizeBy: sum
+				sourceColumn: ha_en_obra
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column ha_sin_empezar
+				dataType: double
+				lineageTag: cf27ea74-5133-48f9-9fc7-5ea1e2904a1f
+				sourceLineageTag: ha_sin_empezar
+				summarizeBy: sum
+				sourceColumn: ha_sin_empezar
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition gold_avance_paneles = entity
+				mode: directLake
+				source
+					entityName: gold_avance_paneles
+					expressionSource: 'DirectLake - Lh_Gold'
+
+		expression 'DirectLake - Lh_Gold' =
+				let
+				    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/3288374f-5a5d-4c66-bf8a-cf7c5a335de9/ec8260c4-b9c9-4303-9a66-779ca2c05d64", [HierarchicalNavigation=true])
+				in
+				    Source
+			lineageTag: 7c4ea6e6-b5b0-4b38-9582-e63a79c73bbb
+
+			annotation PBI_IncludeFutureArtifacts = False
+
+		annotation __PBI_TimeIntelligenceEnabled = 1
+
+		annotation PBI_QueryOrder = ["DirectLake - Lh_Gold"]
+
+		annotation __LastRPTime = 134362065322622017
+
+		annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","TMDLView_Desktop"]
+
