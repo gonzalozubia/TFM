@@ -1,3 +1,8 @@
 # Archivos temporales que genera Python al ejecutar
 __pycache__/
 .pytest_cache/
+
+# Archivos que se generan al construir el paquete
+build/
+dist/
+*.egg-info/
