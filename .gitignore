@@ -1,0 +1,3 @@
+# Archivos temporales que genera Python al ejecutar
+__pycache__/
+.pytest_cache/
