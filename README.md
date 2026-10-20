@@ -28,3 +28,7 @@ y 100 % en 2022.
 El pipeline se desarrolló en Fabric. Como la integración de Fabric con GitHub está
 deshabilitada en la cuenta de la universidad, la lógica principal se extrajo después
 al paquete `avance_obra` para poder versionarla y cubrirla con tests.
+
+## Arquitectura
+
+![Arquitectura del pipeline](docs/Arquitectura_GonzaloZubia.png)
