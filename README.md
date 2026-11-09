@@ -6,6 +6,8 @@ Autor: Gonzalo Zubía López
 
 Tutores: Jorge Centeno y Alberto González
 
+**Video de Presentacion:** https://youtu.be/VROz9u-AU5Y
+
 ## Descripción
 
 Pipeline de datos en Microsoft Fabric que estima el avance de la obra de una planta
